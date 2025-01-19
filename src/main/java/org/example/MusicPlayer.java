@@ -9,6 +9,10 @@ public class MusicPlayer {
 
     public static void addSong(String name, String artist) {
         Song song = new Song(name, artist);
+        if (songsList.contains(song)) {
+            System.out.println("Song already exists");
+            return;
+        }
         songsList.add(song);
     }
 

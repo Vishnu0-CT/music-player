@@ -44,35 +44,41 @@ public class Main {
         MusicPlayer.playSong("A");
         MusicPlayer.playSong("A");
 
-        Song out1 = MusicPlayer.songsList.get(0);
-        System.out.println("Song: " + out1.name + ", Artist: " + out1.artist + ", Listens: " + out1.listens);
+//        Song out1 = MusicPlayer.songsList.get(0);
+//        System.out.println("Song: " + out1.name + ", Artist: " + out1.artist + ", Listens: " + out1.listens);
+//
+//        Song out2 = MusicPlayer.songsList.get(1);
+//        System.out.println("Song: " + out2.name + ", Artist: " + out2.artist + ", Listens: " + out2.listens);
+//
+//        var out3 = MusicPlayer.alltimeTopSongs();
+//        Arrays.stream(out3).forEach(System.out::println);
+//
+//        var out4 = MusicPlayer.songsByArtist("10");
+//        System.out.println(out4);
+//
+//        var out5 = MusicPlayer.artistTopSongs("10");
+//        Arrays.stream(out5).forEach(System.out::println);
+//
+//        var out6 = MusicPlayer.unpopularSongs(0);
+//        Arrays.stream(out6).forEach(System.out::println);
+//
+//        var out7 = MusicPlayer.dailyTopSongs(LocalDate.parse("2025-01-01"));
+//        Arrays.stream(out7).forEach(System.out::println);
+//
+//        System.out.println();
+//
+//        var out8 = MusicPlayer.dailyTopSongs(LocalDate.parse("2025-01-02"));
+//        Arrays.stream(out8).forEach(System.out::println);
+//
+//        System.out.println();
+//
+//        var out9 = MusicPlayer.dailyTopSongs(LocalDate.parse("2025-01-03"));
+//        Arrays.stream(out9).forEach(System.out::println);
 
-        Song out2 = MusicPlayer.songsList.get(1);
-        System.out.println("Song: " + out2.name + ", Artist: " + out2.artist + ", Listens: " + out2.listens);
+        Playlist.importPlaylist("~/Desktop/Training/java/music-player/music-player/src/main/resources/p1.csv", "playlist1");
+        System.out.println(Playlist.playlistArr.get("playlist1").get(1).artist);
 
-        var out3 = MusicPlayer.alltimeTopSongs();
-        Arrays.stream(out3).forEach(System.out::println);
-
-        var out4 = MusicPlayer.songsByArtist("10");
-        System.out.println(out4);
-
-        var out5 = MusicPlayer.artistTopSongs("10");
-        Arrays.stream(out5).forEach(System.out::println);
-
-        var out6 = MusicPlayer.unpopularSongs(0);
-        Arrays.stream(out6).forEach(System.out::println);
-
-        var out7 = MusicPlayer.dailyTopSongs(LocalDate.parse("2025-01-01"));
-        Arrays.stream(out7).forEach(System.out::println);
-
-        System.out.println();
-
-        var out8 = MusicPlayer.dailyTopSongs(LocalDate.parse("2025-01-02"));
-        Arrays.stream(out8).forEach(System.out::println);
-
-        System.out.println();
-
-        var out9 = MusicPlayer.dailyTopSongs(LocalDate.parse("2025-01-03"));
-        Arrays.stream(out9).forEach(System.out::println);
+        Playlist.exportPlaylist("playlist1", "p2", "csv");
+        Playlist.exportPlaylist("playlist1", "p3", "tsv");
     }
 }
